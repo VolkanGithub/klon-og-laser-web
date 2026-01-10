@@ -1,71 +1,59 @@
-import Link from 'next/link';
-import { GetStaticProps } from 'next';
 import Head from 'next/head';
-import contentData from '@/data/content.json';
 import LaserBackground from '@/components/LaserBackground';
 
 export default function Home() {
-  const { hero } = contentData;
-
   return (
     <>
       <Head>
-        <title>OG Laser | Endüstriyel Lazer Çözümleri</title>
-        <meta name="description" content={hero.description} />
+        <title>OG LASER | Teknik Danışmanlık ve Destek</title>
+        <meta name="description" content="OG LASER TEKNİK DANIŞMANLIK VE DESTEK HİZMETLERİ" />
       </Head>
 
-      {/* HERO SECTION */}
-      <section className="min-h-[85vh] flex items-center justify-center px-6 relative overflow-hidden">
+      <main className="relative min-h-screen bg-[#121212] flex items-center justify-center overflow-hidden">
         
-        {/* KATMAN 1: Gradient (En Alt) */}
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-[#FF4D00]/10 via-[#121212] to-[#121212]"></div>
+        {/* KATMAN 1: Arka Plan Gradyanı */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,77,0,0.08),transparent_70%)]"></div>
 
-        {/* KATMAN 2: Lazer Efekti (Orta) */}
-        {/* opacity-50 ekledim ki yazıları çok boğmasın ama görünsün */}
-        <div className="absolute top-0 left-0 w-full h-full opacity-50">
-           <LaserBackground />
+        {/* KATMAN 2: Lazer Efekti (Dokunmuyoruz, tam güç çalışıyor) */}
+        <div className="absolute inset-0 z-0">
+          <LaserBackground />
         </div>
 
-        {/* KATMAN 3: İçerik (En Üst - z-10) */}
-        <div className="max-w-5xl w-full text-center flex flex-col items-center z-10 relative">
+        {/* KATMAN 3: İçerik */}
+        <div className="relative z-10 text-center px-6 max-w-5xl">
           
-          <h1 className="text-5xl md:text-8xl font-bold text-white mb-6 tracking-tighter leading-tight">
-            {hero.title}
+          {/* Ana Başlık */}
+          <h1 className="text-4xl md:text-7xl font-bold text-white mb-6 tracking-tighter leading-tight uppercase">
+            OG LASER <br />
+            <span className="text-lg md:text-3xl text-gray-400 font-light tracking-[0.3em] block mt-4">
+              TEKNİK DANIŞMANLIK VE DESTEK HİZMETLERİ
+            </span>
           </h1>
 
-          <h2 className="text-xl md:text-2xl text-[#FF4D00] font-light mb-8 tracking-[0.2em]">
-            {hero.subtitle}
-          </h2>
+          {/* İletişim Bilgileri */}
+          <div className="mt-16 space-y-6 text-lg md:text-2xl font-mono">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-12">
+              <p className="text-gray-400 flex items-center gap-3">
+                <span className="text-[#FF4D00]">Mobile :</span>
+                <a href="tel:+905323225260" className="text-white hover:text-[#FF4D00] transition-colors">
+                  +90 532 322 52 60
+                </a>
+              </p>
+              <p className="text-gray-400 flex items-center gap-3">
+                <span className="text-[#FF4D00]">e-mail :</span>
+                <a href="mailto:info@oglaser.com" className="text-white hover:text-[#FF4D00] transition-colors">
+                  info@oglaser.com
+                </a>
+              </p>
+            </div>
+          </div>
 
-          <p className="text-gray-300 max-w-3xl text-xl md:text-2xl mb-12 leading-relaxed font-medium">
-            {hero.description}
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              href="/iletisim" 
-              className="bg-[#FF4D00] text-white px-8 py-4 rounded-full font-bold hover:bg-[#ff3300] transition-colors text-center shadow-[0_0_20px_rgba(255,77,0,0.3)] hover:shadow-[0_0_30px_rgba(255,77,0,0.5)]"
-            >
-              HEMEN TEKLİF AL
-            </Link>
-            
-            <Link 
-              href="/hizmetler" 
-              className="border border-white/20 text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-black transition-colors text-center backdrop-blur-sm"
-            >
-              HİZMETLERİMİZ
-            </Link>
+          {/* Sektörel Dipnot */}
+          <div className="mt-24 pt-8 border-t border-white/5 opacity-30 text-[10px] text-white tracking-[0.5em] uppercase">
+            Endüstriyel Lazer Çözümleri
           </div>
         </div>
-      </section>
+      </main>
     </>
   );
 }
-
-export const getStaticProps: GetStaticProps = async () => {
-  return {
-    props: {
-      // contentData
-    },
-  };
-};
