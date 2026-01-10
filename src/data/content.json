@@ -1,0 +1,132 @@
+{
+  "siteName": "OG LASER",
+  "navigation": [
+    {
+      "title": "Anasayfa",
+      "href": "/"
+    },
+    {
+      "title": "Hizmetler",
+      "href": "/hizmetler"
+    },
+    {
+      "title": "Yedek Parça",
+      "href": "/yedek-parca"
+    },
+    {
+      "title": "İletişim",
+      "href": "/iletisim"
+    }
+  ],
+  "hero": {
+    "title": "OG LASER",
+    "subtitle": "ENDÜSTRİYEL LAZER SİSTEMLERİNDE KESİNTİSİZ GÜÇ",
+    "description": "Makineniz durmasın, üretiminiz aksamasın. 7/24 teknik servis ve garantili yedek parça çözümleri.",
+    "ctaText": "Hemen Teklif Al"
+  },
+  "features": [
+    {
+      "title": "Yüksek Hassasiyet",
+      "description": "Mikron seviyesinde kesim kalitesi ile firesiz üretim ve maksimum verimlilik."
+    },
+    {
+      "title": "7/24 Teknik Destek",
+      "description": "Gece gündüz demeden, üretim hattınız durmasın diye anında müdahale garantisi."
+    },
+    {
+      "title": "Yerli Mühendislik",
+      "description": "%100 yerli sermaye ve Türk mühendisliği ile geliştirilen, yedek parçası bol çözümler."
+    }
+  ],
+  "services": [
+    {
+      "id": "lazer-kesim-servis",
+      "title": "Lazer Kesim Teknik Servis",
+      "description": "Markalama ve kesim makineleriniz için yerinde arıza tespiti ve onarım.",
+      "icon": "⚡",
+      "details": [
+        "Güç Kaynağı Tamiri",
+        "Anakart Değişimi",
+        "Soğutma Sistemi Bakımı"
+      ]
+    },
+    {
+      "id": "yedek-parca",
+      "title": "Garantili Yedek Parça",
+      "description": "Orijinal ve muadili yüksek kaliteli yedek parçalarla makinenizi yenileyin.",
+      "icon": "⚙️",
+      "details": [
+        "Lens ve Ayna Setleri",
+        "Lazer Tüp Değişimi",
+        "Step Motorlar"
+      ]
+    },
+    {
+      "id": "optik-kalibrasyon",
+      "title": "Optik Kalibrasyon",
+      "description": "Hassasiyet kaybı yaşayan makineleriniz için milimetrik ayar hizmeti.",
+      "icon": "🎯",
+      "details": [
+        "Işın Yolu Ayarı",
+        "Odaklama Testleri",
+        "Lens Temizliği"
+      ]
+    }
+  ],
+  "contact": [
+    {
+      "type": "phone",
+      "title": "Bizi Arayın",
+      "value": "tel:+902120000000",
+      "displayValue": "+90 (212) 000 00 00"
+    },
+    {
+      "type": "email",
+      "title": "E-Posta Gönderin",
+      "value": "mailto:info@oglaser.com",
+      "displayValue": "info@oglaser.com"
+    },
+    {
+      "type": "address",
+      "title": "Atölye & Ofis",
+      "value": "https://maps.google.com",
+      "displayValue": "İkitelli OSB, Metal İş Sanayi Sitesi, 4. Blok, İstanbul"
+    }
+  ],
+  "spareParts": [
+    {
+      "id": "fiber-lens",
+      "name": "Fiber Lazer Kesim Lensi (1064nm)",
+      "category": "Optik"
+    },
+    {
+      "id": "nozzle-uc",
+      "name": "Krom Kaplama Nozzle Uçları",
+      "category": "Sarf Malzeme"
+    },
+    {
+      "id": "koruma-cami",
+      "name": "Koruma Camı (D30 x 5mm)",
+      "category": "Optik"
+    },
+    {
+      "id": "step-motor",
+      "name": "Y ekseni Step Motor Sürücü",
+      "category": "Elektronik"
+    },
+    {
+      "id": "seramik-halka",
+      "name": "Sensör Seramik Halka",
+      "category": "Yedek Parça"
+    },
+    {
+      "id": "lazer-tupu",
+      "name": "Co2 Lazer Tüpü (130W)",
+      "category": "Güç Kaynağı"
+    }
+  ],
+  "footer": {
+    "copyright": "© 2025 OG Laser. Tüm hakları saklıdır.",
+    "contact": "info@oglaser.com"
+  }
+}
