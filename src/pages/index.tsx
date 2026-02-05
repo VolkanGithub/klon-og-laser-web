@@ -2,6 +2,7 @@ import { useState, MouseEvent } from 'react';
 import Head from 'next/head';
 import LaserBackground from '@/components/LaserBackground';
 import Navbar from '@/components/Navbar';
+import { Phone, Mail, Globe, Cpu, Wrench, Zap, Package } from 'lucide-react';
 
 export default function Home() {
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
@@ -14,111 +15,145 @@ export default function Home() {
     setTilt({ x, y });
   };
 
-  const handleMouseLeave = () => setTilt({ x: 0, y: 0 });
-
-  const services = [
-    "N 1000 , M 800 , M 500 YEDEK PARÇALARI",
-    "AOM MODULATOR GARANTİLİ TAMİRİ VE KALİBRASYONU",
-    "RF SÜRÜCÜLER GARANTİLİ TAMİRİ VE KALİBRASYONU",
-    "STOĞUMUZDAN ADRESİNİZE TESLİM OPTİK ELEMANLAR"
+  const servicesList = [
+    { icon: Package, title: "N 1000 , M 800 , M 500 YEDEK PARÇALARI" },
+    { icon: Wrench, title: "AOM MODULATOR GARANTİLİ TAMİRİ VE KALİBRASYONU" },
+    { icon: Cpu, title: "RF SÜRÜCÜLER GARANTİLİ TAMİRİ VE KALİBRASYONU" },
+    { icon: Zap, title: "STOĞUMUZDAN ADRESİNİZE TESLİM OPTİK ELEMANLAR" }
   ];
 
   return (
     <>
       <Head>
-        <title>OG LASER | Teknik Danışmanlık ve Destek</title>
+        <title>OG LASER | Teknik Danışmanlık</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
       </Head>
 
-      <Navbar links={[]} />
+      <Navbar />
 
-      {/* DEĞİŞİKLİKLER:
-          1. h-screen -> min-h-screen: İçerik sığmazsa sayfa uzasın.
-          2. overflow-hidden kaldırıldı: Kaydırma (scroll) aktif edildi.
-          3. pb-12 eklendi: Sayfanın en altında nefes alacak alan bırakıldı.
-      */}
-      <main className="relative min-h-screen w-full bg-[#050505] text-white flex flex-col pb-12">
+      <main className="relative min-h-screen w-full bg-[#050505] text-white flex flex-col pb-12 font-sans">
         
-        {/* LAZER ARKA PLANI - fixed olduğu için içerik üzerinde kayarken sabit kalır */}
         <div className="fixed inset-0 z-0">
           <LaserBackground />
           <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-90"></div>
         </div>
 
-        {/* ANA İÇERİK KONTEYNERİ */}
-        <div className="relative z-10 flex-1 max-w-5xl mx-auto w-full px-6 flex flex-col justify-start pt-28 md:pt-40 gap-10 md:gap-12">
+        {/* Üst kısım geniş kalmaya devam ediyor */}
+        <div className="relative z-10 flex-1 max-w-5xl mx-auto w-full px-6 flex flex-col justify-start pt-36 md:pt-48 gap-6 md:gap-10">
           
-          {/* HERO BÖLÜMÜ */}
-          <div className="text-center space-y-4">
-            <h1 
-              className="text-4xl md:text-7xl font-black tracking-tighter leading-none uppercase text-white"
-              style={{ 
-                textShadow: '0 10px 30px rgba(0,0,0,0.8), 0 2px 4px rgba(0,0,0,0.5)' 
-              }}
-            >
-              GÜÇ VE <span className="text-[#FF4D00]">HASSASİYET</span>
+          {/* HERO KARTI */}
+          <div className="relative w-full bg-white/[0.03] border border-white/10 p-8 md:p-12 backdrop-blur-md rounded-xl shadow-2xl text-center flex flex-col items-center justify-center gap-4 overflow-hidden">
+            <h1 className="font-orbitron font-black tracking-tighter leading-tight uppercase text-white drop-shadow-2xl z-10 relative text-2xl xs:text-3xl md:text-4xl">
+                GÜÇ VE <span className="text-[#FF4D00]">HASSASİYET</span>
             </h1>
-            <p 
-              className="text-[10px] md:text-lg font-bold tracking-[0.4em] text-gray-400 uppercase"
-              style={{ textShadow: '0 4px 10px rgba(0,0,0,0.8)' }}
-            >
-              Endüstriyel Lazer Çözümleri & Teknik Destek
+            <p className="font-bold tracking-[0.2em] text-gray-400 uppercase z-10 relative text-[10px] md:text-sm">
+                Lazer Gravür Çözümleri & Teknik Danışmanlık
             </p>
           </div>
 
-          {/* HİZMET LİSTESİ */}
-          <div className="w-full bg-white/[0.03] border border-white/10 p-6 md:p-8 backdrop-blur-md rounded-xl shadow-[0_20px_40px_rgba(0,0,0,0.6)]">
+          {/* HİZMETLER */}
+          <div id="hizmetler" className="w-full bg-white/[0.03] border border-white/10 p-6 md:p-8 backdrop-blur-md rounded-xl shadow-[0_20px_40px_rgba(0,0,0,0.6)]">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12">
-              {services.map((service, index) => (
-                <div key={index} className="flex items-center gap-5 group cursor-default">
-                  <div className="w-2.5 h-2.5 bg-[#FF4D00] rotate-45 group-hover:scale-125 transition-all duration-300"></div>
-                  <span className="text-sm md:text-lg font-black text-gray-300 uppercase tracking-wider group-hover:text-[#FF4D00] transition-colors duration-300">
-                    {service}
+              {servicesList.map((service, index) => (
+                <div key={index} className="flex items-start gap-4 group cursor-default">
+                  <div className="p-2 rounded-lg bg-[#FF4D00]/10 text-[#FF4D00] group-hover:bg-[#FF4D00] group-hover:text-white transition-all shadow-[0_0_10px_rgba(255,77,0,0.15)] flex-shrink-0 mt-0.5">
+                    <service.icon className="w-5 h-5" strokeWidth={2} />
+                  </div>
+                  <span className="font-bold text-gray-300 uppercase tracking-wide group-hover:text-white transition-colors leading-tight text-xs md:text-sm">
+                    {service.title}
                   </span>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* İLETİŞİM KARTI */}
+          {/* --- İLETİŞİM KARTI (SIKIŞTIRILMIŞ / KOMPAKT VERSİYON) --- */}
           <div 
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-            style={{
-              transform: `perspective(1000px) rotateX(${tilt.y}deg) rotateY(${tilt.x}deg)`,
-              transition: 'transform 0.1s ease-out'
-            }}
-            className="w-full bg-[#FF4D00]/5 backdrop-blur-3xl border border-[#FF4D00]/20 p-8 md:p-10 rounded-2xl shadow-[0_25px_50px_rgba(0,0,0,0.7)] group cursor-pointer"
+            id="iletisim"
+            // max-w-3xl ile genişliği daralttık
+            className="relative w-full max-w-3xl mx-auto" 
           >
-            <div className="flex flex-col md:flex-row justify-around items-center gap-8 md:gap-12 text-center md:text-left">
+            <div 
+              onMouseMove={handleMouseMove}
+              onMouseLeave={() => setTilt({ x: 0, y: 0 })}
+              style={{
+                transform: `perspective(1000px) rotateX(${tilt.y}deg) rotateY(${tilt.x}deg)`,
+                transition: 'transform 0.1s ease-out'
+              }}
+              className="relative overflow-hidden bg-gradient-to-br from-[#1a1a1a]/95 to-[#050505]/98 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.6)] text-white laser-card-hover"
+            >
               
-              <a href="tel:+905323225260" className="group/link flex flex-col items-center md:items-start">
-                <span className="text-[10px] text-[#FF4D00] tracking-[0.4em] uppercase font-black mb-2">7/24 Teknik Destek</span>
-                <span className="text-2xl md:text-4xl font-black tracking-tighter group-hover/link:text-[#FF4D00] transition-colors">
-                  +90 532 322 52 60
-                </span>
-              </a>
+              <span className="laser-beam opacity-40"></span>
+              <span className="laser-beam opacity-40 animation-delay-500"></span>
 
-              <div className="hidden md:block w-px h-16 bg-white/10"></div>
+              {/* Flex Container */}
+              <div className="relative z-10 flex flex-col md:flex-row min-h-[180px]">
 
-              <a href="mailto:info@oglaser.com" className="group/link flex flex-col items-center md:items-start">
-                <span className="text-[10px] text-gray-500 tracking-[0.4em] uppercase font-black mb-2">Kurumsal İletişim</span>
-                <span className="text-lg md:text-2xl font-bold tracking-widest group-hover/link:text-[#FF4D00] transition-colors uppercase italic text-gray-200">
-                  info@oglaser.com
-                </span>
-              </a>
+                {/* 1. SOL YARI: MARKA (Paddingler azaltıldı: p-5) */}
+                <div className="w-full md:w-5/12 p-5 md:p-6 flex flex-col justify-center items-center text-center border-b md:border-b-0 md:border-r border-white/10 bg-white/[0.02]">
+                  <h2 className="font-orbitron font-black text-3xl md:text-4xl text-[#FF4D00] tracking-tighter mb-1 drop-shadow-[0_0_10px_rgba(255,77,0,0.3)]">
+                    OG LASER
+                  </h2>
+                  <p className="font-bold text-[10px] md:text-xs text-gray-400 tracking-widest uppercase leading-relaxed max-w-[180px]">
+                    TEKNİK DANIŞMANLIK SAN. TİC. LTD. ŞTİ.
+                  </p>
+                </div>
 
+                {/* 2. SAĞ YARI: KİŞİ VE İLETİŞİM (Gap ve Padding kısıldı) */}
+                <div className="w-full md:w-7/12 p-4 md:p-5 flex flex-col justify-center items-center text-center gap-4">
+                  
+                  {/* İsim ve Unvan */}
+                  <div className="flex flex-col items-center border-b border-white/5 pb-2 w-full max-w-[200px]">
+                     <h3 className="font-sans font-black text-xl md:text-2xl text-white tracking-tight">
+                        Ömer GÖBEKLİ
+                     </h3>
+                     <span className="text-[#FF4D00] font-bold tracking-[0.2em] text-[10px] uppercase">
+                        - CEO -
+                     </span>
+                  </div>
+
+                  {/* Liste (Gap 2'ye düşürüldü, ikonlar küçültüldü) */}
+                  <div className="flex flex-col gap-2 w-full items-center">
+                    
+                    {/* Telefon */}
+                    <a href="tel:+905323225260" className="flex items-center justify-center gap-3 group hover:bg-white/5 p-1.5 px-3 rounded-xl transition-all w-fit">
+                      <div className="w-7 h-7 rounded-full bg-[#FF4D00]/10 text-[#FF4D00] flex items-center justify-center shadow-[0_0_8px_rgba(255,77,0,0.2)] group-hover:bg-[#FF4D00] group-hover:text-white transition-all border border-[#FF4D00]/30">
+                        <Phone className="w-3.5 h-3.5" strokeWidth={2.5} />
+                      </div>
+                      <span className="font-bold text-gray-300 group-hover:text-white transition-colors text-sm tracking-wide">
+                        +90 532 322 52 60
+                      </span>
+                    </a>
+
+                    {/* Mail */}
+                    <a href="mailto:omer@oglaser.com" className="flex items-center justify-center gap-3 group hover:bg-white/5 p-1.5 px-3 rounded-xl transition-all w-fit">
+                      <div className="w-7 h-7 rounded-full bg-[#FF4D00]/10 text-[#FF4D00] flex items-center justify-center shadow-[0_0_8px_rgba(255,77,0,0.2)] group-hover:bg-[#FF4D00] group-hover:text-white transition-all border border-[#FF4D00]/30">
+                        <Mail className="w-3.5 h-3.5" strokeWidth={2.5} />
+                      </div>
+                      <span className="font-bold text-gray-300 group-hover:text-white transition-colors text-sm tracking-wide">
+                        omer@oglaser.com
+                      </span>
+                    </a>
+
+                    {/* Web */}
+                    <a href="https://www.oglaser.com" target="_blank" className="flex items-center justify-center gap-3 group hover:bg-white/5 p-1.5 px-3 rounded-xl transition-all w-fit">
+                      <div className="w-7 h-7 rounded-full bg-[#FF4D00]/10 text-[#FF4D00] flex items-center justify-center shadow-[0_0_8px_rgba(255,77,0,0.2)] group-hover:bg-[#FF4D00] group-hover:text-white transition-all border border-[#FF4D00]/30">
+                        <Globe className="w-3.5 h-3.5" strokeWidth={2.5} />
+                      </div>
+                      <span className="font-bold text-gray-300 group-hover:text-white transition-colors text-sm tracking-wide">
+                        www.oglaser.com
+                      </span>
+                    </a>
+
+                  </div>
+
+                </div>
+
+              </div>
             </div>
           </div>
 
         </div>
-
-        {/* KÖŞE DETAYLARI */}
-        <div className="absolute inset-4 pointer-events-none z-20 opacity-20">
-          <div className="absolute top-24 left-0 w-8 h-8 border-t-2 border-l-2 border-[#FF4D00]"></div>
-          <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-white"></div>
-        </div>
-
       </main>
     </>
   );

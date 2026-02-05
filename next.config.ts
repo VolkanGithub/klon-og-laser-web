@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    unoptimized: true, // Statik exportta resim optimizasyonunu kapatmalıyız
+    // Vercel'de otomatik optimizasyon aktif
   },
 };
 

@@ -4,13 +4,20 @@ import type { AppProps } from "next/app";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import NProgress from "nprogress";
-import { Orbitron } from 'next/font/google'; // Fontu import ettik
+import { Orbitron, Inter } from 'next/font/google'; // Inter'i de ekledik
 
-// Font ayarlarını yapıyoruz
+// 1. Marka Fontu (Teknolojik)
 const orbitron = Orbitron({ 
   subsets: ['latin'],
-  weight: ['400', '900'],
-  variable: '--font-orbitron' 
+  weight: ['400', '700', '900'],
+  variable: '--font-orbitron',
+});
+
+// 2. Okuma Fontu (Temiz)
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+  variable: '--font-inter',
 });
 
 NProgress.configure({ showSpinner: false });
@@ -34,8 +41,8 @@ export default function App({ Component, pageProps }: AppProps) {
   }, [router]);
 
   return (
-    // Font değişkenini ana sarmalayıcıya ekledik
-    <div className={`${orbitron.variable} font-sans`}>
+    // İki font değişkenini de (variable) buraya ekledik
+    <div className={`${orbitron.variable} ${inter.variable} font-sans antialiased`}>
       <Component {...pageProps} />
     </div>
   );

@@ -28,8 +28,8 @@ export default function ContactPage({ contactInfo }: ContactPageProps) {
     setLoading(true);
 
     try {
-      // PHP Dosyasına İstek Atıyoruz
-      const response = await fetch('/mail.php', {
+      // API Route'a İstek Atıyoruz
+      const response = await fetch('/api/send-mail', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

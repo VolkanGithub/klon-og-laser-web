@@ -77,14 +77,14 @@
     {
       "type": "phone",
       "title": "Bizi Arayın",
-      "value": "tel:+902120000000",
-      "displayValue": "+90 (212) 000 00 00"
+      "value": "tel:+905323225260",
+      "displayValue": "+90 532 322 52 60"
     },
     {
       "type": "email",
       "title": "E-Posta Gönderin",
-      "value": "mailto:info@oglaser.com",
-      "displayValue": "info@oglaser.com"
+      "value": "mailto:omer@oglaser.com",
+      "displayValue": "omer@oglaser.com / info@oglaser.com"
     },
     {
       "type": "address",

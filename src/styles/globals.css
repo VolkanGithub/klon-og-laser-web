@@ -16,3 +16,116 @@
 #nprogress .spinner {
   z-index: 9999 !important;
 }
+
+@import "tailwindcss";
+
+/* NProgress Özelleştirme */
+#nprogress .bar {
+  background: #FF4D00 !important;
+  height: 3px !important;
+  z-index: 9999 !important;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px #FF4D00, 0 0 5px #FF4D00 !important;
+}
+
+#nprogress .spinner {
+  z-index: 9999 !important;
+}
+
+/* --- LAZER BORDER ANİMASYONU --- */
+/* Kartın etrafında dönen ışık hüzmesi */
+.laser-beam {
+  position: absolute;
+  display: block;
+}
+
+/* ÜST KENAR (Soldan Sağa) */
+.laser-beam:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #FF4D00);
+  animation: beam-horz 2s linear infinite;
+}
+
+/* SAĞ KENAR (Yukarıdan Aşağıya) */
+.laser-beam:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #FF4D00);
+  animation: beam-vert 2s linear infinite;
+  animation-delay: 0.5s;
+  /* Gecikmeli başla ki takip etsin */
+}
+
+/* ALT KENAR (Sağdan Sola) */
+.laser-beam:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #FF4D00);
+  animation: beam-horz-rev 2s linear infinite;
+  animation-delay: 1s;
+}
+
+/* SOL KENAR (Aşağıdan Yukarıya) */
+.laser-beam:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #FF4D00);
+  animation: beam-vert-rev 2s linear infinite;
+  animation-delay: 1.5s;
+}
+
+/* Hareket Tanımları */
+@keyframes beam-horz {
+  0% {
+    left: -100%;
+  }
+
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes beam-vert {
+  0% {
+    top: -100%;
+  }
+
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes beam-horz-rev {
+  0% {
+    right: -100%;
+  }
+
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+@keyframes beam-vert-rev {
+  0% {
+    bottom: -100%;
+  }
+
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}
