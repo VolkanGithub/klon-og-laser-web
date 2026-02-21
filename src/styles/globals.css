@@ -5,25 +5,6 @@
   background: #FF4D00 !important;
   height: 3px !important;
   z-index: 9999 !important;
-  /* HER ŞEYİN ÜSTÜNDE OLSUN! */
-}
-
-/* Çubuğun ucundaki parlama efekti */
-#nprogress .peg {
-  box-shadow: 0 0 10px #FF4D00, 0 0 5px #FF4D00 !important;
-}
-
-#nprogress .spinner {
-  z-index: 9999 !important;
-}
-
-@import "tailwindcss";
-
-/* NProgress Özelleştirme */
-#nprogress .bar {
-  background: #FF4D00 !important;
-  height: 3px !important;
-  z-index: 9999 !important;
 }
 
 #nprogress .peg {
@@ -35,7 +16,6 @@
 }
 
 /* --- LAZER BORDER ANİMASYONU --- */
-/* Kartın etrafında dönen ışık hüzmesi */
 .laser-beam {
   position: absolute;
   display: block;
@@ -60,7 +40,6 @@
   background: linear-gradient(180deg, transparent, #FF4D00);
   animation: beam-vert 2s linear infinite;
   animation-delay: 0.5s;
-  /* Gecikmeli başla ki takip etsin */
 }
 
 /* ALT KENAR (Sağdan Sola) */
@@ -85,7 +64,6 @@
   animation-delay: 1.5s;
 }
 
-/* Hareket Tanımları */
 @keyframes beam-horz {
   0% {
     left: -100%;
