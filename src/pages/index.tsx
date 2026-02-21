@@ -92,7 +92,7 @@ export default function Home() {
               ))}
             </div>
           </div>
-
+          {/* --- İLETİŞİM FORMU --- */}
         </div>
 
         <div className="shrink-0 h-8 lg:hidden"></div>

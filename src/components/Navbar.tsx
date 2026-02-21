@@ -56,6 +56,7 @@ export default function Navbar({ }: NavbarProps) {
             </a>
 
             {/* E-MAIL */}
+            {/* E-MAIL */}
             <a
               href="mailto:info@oglaser.com"
               className="px-3 py-1.5 rounded-full border border-[#FF4D00]/30 bg-[#FF4D00]/5 hover:bg-[#FF4D00] group transition-all duration-300 cursor-pointer whitespace-nowrap"
