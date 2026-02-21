@@ -6,7 +6,7 @@ import { Package, Wrench, Cpu, Zap } from 'lucide-react';
 export default function Home() {
 
   // BURAYI KENDİ VERCEL LİNKİNLE DEĞİŞTİRMEYİ UNUTMA
-  const siteUrl = "https://oglaser-dev.vercel.app";
+  const siteUrl = "https://www.oglaser.com";
 
   const servicesList = [
     { icon: Package, title: "N 1000 , M 800 , M 500 YEDEK PARÇALARI" },
