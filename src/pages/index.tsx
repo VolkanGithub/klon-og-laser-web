@@ -20,9 +20,8 @@ export default function Home() {
       <Head>
         <title>OG LASER | Güç ve Hassasiyet</title>
         {/* Favicon tanımlamaları */}
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/logo.png" />
-        {/* ...diğer meta etiketleri */}
+        <link rel="icon" type="image/png" href="/logo.png?v=2" />
+        <link rel="apple-touch-icon" href="/logo.png?v=2" />
 
         <meta name="google-site-verification" content="xMOsx0W1IZA9sx-rgqcSqrvJvGzSaF3H5Y4enR6V4nY" />
         <meta name="description" content="Lazer Gravür Çözümleri & Teknik Danışmanlık. AOM Modülatör, RF Sürücü Tamiri ve Yedek Parça Hizmetleri." />
