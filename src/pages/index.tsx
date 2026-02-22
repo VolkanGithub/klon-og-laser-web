@@ -19,6 +19,7 @@ export default function Home() {
     <>
       <Head>
         <title>OG LASER | Güç ve Hassasiyet</title>
+        <meta name="google-site-verification" content="xMOsx0W1IZA9sx-rgqcSqrvJvGzSaF3H5Y4enR6V4nY" />
         <meta name="description" content="Lazer Gravür Çözümleri & Teknik Danışmanlık. AOM Modülatör, RF Sürücü Tamiri ve Yedek Parça Hizmetleri." />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
@@ -72,7 +73,7 @@ export default function Home() {
 
             <p className="font-bold tracking-[0.3em] text-white uppercase z-10 relative
               text-[10px] md:text-sm lg:text-xl drop-shadow-md">
-              Lazer Gravür Çözümleri & Teknik Danışmanlık
+              Lazer Gravür Çözümlerİ & Teknİk Danışmanlık
             </p>
           </div>
 
